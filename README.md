@@ -1,5 +1,5 @@
 # myweb
-* Version: 2021-10 (0.3.2)
+* Version: 2021-10 (0.3.3)
 
 # Vue 3 + Vite
 
