@@ -4,7 +4,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import {ref} from "vue";
 
-const list = ref([1,3,5]);
+const list = ref([]);
 const loading = ref(false);
 const finished = ref(false);
 
@@ -23,7 +23,7 @@ const onLoad = () => {
     if (list.value.length >= 40) {
       finished.value = true;
     }
-  }, 1000);
+  }, 2000);
 };
 
 // return {
@@ -37,24 +37,38 @@ const onLoad = () => {
 
 <template>
 
+<!--  <van-list-->
+<!--      v-model:loading="loading"-->
+<!--      :finished="finished"-->
+<!--      finished-text="没有更多了"-->
+<!--      @load="onLoad"-->
+<!--  >-->
+<!--    <van-cell v-for="item in list" :key="item" :title="item"/>-->
+<!--  </van-list>-->
+
   <van-list
       v-model:loading="loading"
       :finished="finished"
       finished-text="没有更多了"
       @load="onLoad"
   >
-    <van-cell v-for="item in list" :key="item" :title="item"/>
-  </van-list>
+
+
+      <div v-for="item in list" class="van-clearfix " style="width:180px;height:180px;border:1px solid red;float:left">
+        <div class="float-item">1</div>
+        <div class="float-item">2</div>
+        <div class="float-item">3</div>
+      </div>
+    </van-list>
+
+
 </template>
 
 <script>
 
-import {ref} from 'vue';
 
 export default {
-  setup() {
 
-  },
 };
 
 
